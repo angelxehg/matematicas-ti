@@ -24,10 +24,11 @@ public class Expresion01 {
         double p = (double) 1 / 4;
         // Realizar operaciones
         double r1 = ((double) 5 / 6 * Math.pow(a, b - 1)) * (Math.pow(m, c - 2));
-        double r2 = 0;
-        double r3 = 0;
-        double r4 = 0;
-        double r5 = 0;
+        double r2 = (4 * Math.pow(m, 3)) * Math.sqrt(12 * b * Math.pow(c, 2));
+        double r3 = ((Math.pow(3, c)) * Math.sqrt(64 * Math.pow(b, 3) * Math.pow(c, 6))) / (2 * m);
+        double r4 = (24 * m * n) / (2 * Math.sqrt(Math.pow(n, 2) * Math.pow(p, 2)));
+        double r5 = (((double) c / 5) * Math.sqrt(a * p * Math.pow(b, 2)))
+                / (((double) c / b) * Math.pow((125 * b * m), (double) 1 / 3));
         // Imprimir valores
         System.out.println("Resultado 1: " + r1);
         System.out.println("Resultado 2: " + r2);
