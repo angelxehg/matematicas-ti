@@ -28,6 +28,12 @@ public class Expresion02 {
         double r3 = 0;
         double r4 = 0;
         double r5 = 0;
+        // Imprimir valores
+        System.out.println("Resultado 1: " + r1);
+        System.out.println("Resultado 2: " + r2);
+        System.out.println("Resultado 3: " + r3);
+        System.out.println("Resultado 4: " + r4);
+        System.out.println("Resultado 5: " + r5);
     }
 
 }
