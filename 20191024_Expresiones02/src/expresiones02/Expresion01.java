@@ -15,7 +15,19 @@ public class Expresion01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO: Code here
+        // Definir variables
+        double a = 1;
+        double b = 2;
+        double c = 3;
+        double m = (double) 1 / 2;
+        double n = (double) 1 / 3;
+        double p = (double) 1 / 4;
+        // Realizar operaciones
+        double r1 = 0;
+        double r2 = 0;
+        double r3 = 0;
+        double r4 = 0;
+        double r5 = 0;
     }
 
 }
