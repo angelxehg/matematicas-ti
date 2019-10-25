@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Expresion02",
+            "request": "launch",
+            "mainClass": "expresiones02.Expresion02",
+            "projectName": "matematicas-ti_13a7dac9"
+        }
+    ]
+}
