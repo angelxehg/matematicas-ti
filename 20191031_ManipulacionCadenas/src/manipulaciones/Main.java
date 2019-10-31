@@ -19,6 +19,18 @@ public class Main {
         Entrada entrada = new Entrada();
         entrada.mostrarMensaje("Ingrese una cadena:");
         String cadena = entrada.cadena();
+        // Obtener información
+        int cuentaCadena = cadena.length();
+        int cuentaLetras = 0;
+        String letras = "";
+        for (char caracter : cadena.toCharArray()) {
+            letras += " ";
+            letras += caracter;
+            cuentaLetras++;
+        }
+        // Mostrar resultados
+        entrada.mostrarMensaje("Longitud: " + cuentaCadena);
+        entrada.mostrarMensaje("Letras (" + cuentaLetras + "): " + letras);
     }
 
 }
