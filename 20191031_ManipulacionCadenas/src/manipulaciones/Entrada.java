@@ -32,4 +32,8 @@ public class Entrada {
             return -1;
         }
     }
+
+    public String cadena() {
+        return this.s.nextLine();
+    }
 }

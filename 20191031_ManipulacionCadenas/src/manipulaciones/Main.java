@@ -15,7 +15,10 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO escribir código
+        // Leer cadena
+        Entrada entrada = new Entrada();
+        entrada.mostrarMensaje("Ingrese una cadena:");
+        String cadena = entrada.cadena();
     }
 
 }
