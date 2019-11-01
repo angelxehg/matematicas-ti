@@ -22,15 +22,32 @@ public class Main {
         // Obtener información
         int cuentaCadena = cadena.length();
         int cuentaLetras = 0;
+        int cuentaNumeros = 0;
+        int cuentaOperadores = 0;
         String letras = "";
+        String numeros = "";
+        String operadores = "";
         for (char caracter : cadena.toCharArray()) {
-            letras += " ";
-            letras += caracter;
-            cuentaLetras++;
+            String Caracter = "" + caracter;
+            if (Caracter.matches("[A-Za-z]+")) {
+                // Letra
+                letras += " " + Caracter;
+                cuentaLetras++;
+            } else if (Caracter.matches("[0-9]+")) {
+                // Número
+                numeros += " " + Caracter;
+                cuentaNumeros++;
+            } else if (Caracter.matches("[+,-,*,/,^,%,=,!,|,&,<,>,(,)]")) {
+                // Operador
+                operadores += " " + Caracter;
+                cuentaOperadores++;
+            }
         }
         // Mostrar resultados
-        entrada.mostrarMensaje("Longitud: " + cuentaCadena);
+        entrada.mostrarMensaje("Cadena: (" + cuentaCadena + "): " + cadena);
         entrada.mostrarMensaje("Letras (" + cuentaLetras + "): " + letras);
+        entrada.mostrarMensaje("Números (" + cuentaNumeros + "): " + numeros);
+        entrada.mostrarMensaje("Operadores (" + cuentaOperadores + "): " + operadores);
     }
 
 }
