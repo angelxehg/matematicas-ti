@@ -19,9 +19,9 @@ public class Main {
     public static void main(String[] args) {
         Entrada entrada = new Entrada();
         String expresion = entrada.cadena().trim();
-        // ...
+        // Separar en fragmentos
         ArrayList<String> fragmentos = Main.separar(expresion);
-        //
+        // Imprimir fragmentos
         System.out.println("Expresión: " + expresion);
         for (String fragmentp : fragmentos) {
             System.out.println(fragmentp);
@@ -29,27 +29,31 @@ public class Main {
     }
 
     public static ArrayList<String> separar(String expresion) {
+        // Obtener índices
         int nextPlus = expresion.indexOf("+");
         int nextMinus = expresion.indexOf("-");
+        // Determinar carga (positivo o negativo)
+        boolean positive = (nextMinus != 0); // A menos que exista un - al inicio, debe ser positivo
+        char signo = positive ? '+' : '-';
+        // Quitar signo (si existe)
+        if (nextPlus == 0 || nextMinus == 0) {
+            expresion = expresion.substring(1);
+            nextPlus = expresion.indexOf("+");
+            nextMinus = expresion.indexOf("-");
+        }
+        // Determinar caso base
         if (nextPlus < 0 && nextMinus < 0) {
-            // Caso base
             ArrayList<String> fragmentos = new ArrayList<>();
-            fragmentos.add(expresion);
+            String fragmento = signo + expresion;
+            fragmentos.add(fragmento);
             return fragmentos;
         }
-        int index = 0;
-        if ((nextPlus < nextMinus && nextPlus > 0) || nextMinus < 0) {
-            // Suma está más cerca
-            index = nextPlus;
-        } else {
-            // Resta está más cerca
-            index = nextMinus;
-        }
-        // Recursividad
-        String fragmento = expresion.substring(0, index);
-        String restante = expresion.substring(index + 1);
+        // Continuar recursividad
+        int index = (nextPlus < nextMinus && nextPlus > 0) || nextMinus < 0 ? nextPlus : nextMinus;
+        String fragmento = signo + expresion.substring(0, index);
+        String restante = expresion.substring(index);
         ArrayList<String> fragmentos = Main.separar(restante);
-        fragmentos.add(fragmento);
+        fragmentos.add(0, fragmento);
         return fragmentos;
     }
 
