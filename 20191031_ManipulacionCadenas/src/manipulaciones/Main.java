@@ -37,7 +37,7 @@ public class Main {
                 // Número
                 numeros += " " + Caracter;
                 cuentaNumeros++;
-            } else if (Caracter.matches("[+,-,*,/,^,%,=,!,|,&,<,>,(,)]")) {
+            } else if (Caracter.matches("[+,\\-,*,/]+")) {
                 // Operador
                 operadores += " " + Caracter;
                 cuentaOperadores++;
