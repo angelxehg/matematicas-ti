@@ -34,7 +34,6 @@ public class Main {
         int nextMinus = expresion.indexOf("-");
         // Determinar carga (positivo o negativo)
         boolean positive = (nextMinus != 0); // A menos que exista un - al inicio, debe ser positivo
-        char signo = positive ? '+' : '-';
         String caption = positive ? " (positivo)" : " (negativo)";
         // Quitar signo (si existe)
         if (nextPlus == 0 || nextMinus == 0) {
@@ -45,13 +44,13 @@ public class Main {
         // Determinar caso base
         if (nextPlus < 0 && nextMinus < 0) {
             ArrayList<String> fragmentos = new ArrayList<>();
-            String fragmento = signo + expresion + caption;
+            String fragmento = expresion + caption;
             fragmentos.add(fragmento);
             return fragmentos;
         }
         // Continuar recursividad
         int index = (nextPlus < nextMinus && nextPlus > 0) || nextMinus < 0 ? nextPlus : nextMinus;
-        String fragmento = signo + expresion.substring(0, index) + caption;
+        String fragmento = expresion.substring(0, index) + caption;
         String restante = expresion.substring(index);
         ArrayList<String> fragmentos = Main.separar(restante);
         fragmentos.add(0, fragmento);
